@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-// tslint:disable-next-line:import-blacklist
-import 'rxjs/Rx';
+
 
 
 const baseUrl = 'https://newsapi.org';
