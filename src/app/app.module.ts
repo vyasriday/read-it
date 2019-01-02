@@ -10,7 +10,6 @@ import { AppComponent } from './app.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleService } from './article.service';
 import { LoaderComponent } from './loader/loader.component';
-import { ArticleListHeaderComponent } from './article-list-header/article-list-header.component';
 
 
 @NgModule({
@@ -20,7 +19,6 @@ import { ArticleListHeaderComponent } from './article-list-header/article-list-h
     ArticleComponent,
     ArticleListComponent,
     LoaderComponent,
-    ArticleListHeaderComponent
   ],
   imports: [
     BrowserModule,
