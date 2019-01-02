@@ -1,0 +1,25 @@
+<div class="ui basic">
+  <h1 class="ui header">News</h1>
+  <div class="ui grid">
+    <div class="four column row">
+      <div class="left floated column">
+        <div class="ui buttons">
+          <button
+            class="ui left attached icon mini blue button"
+            (click)="changeDirection()">
+            <i
+              [ngClass]="{
+                'up': sortDirection > 0,
+                'down': sortDirection <0
+              }"
+              class="arrow up icon">
+            </i>
+          </button>
+        </div>
+      </div>
+      <div class="right floated column">
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,5 @@
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -7,7 +9,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { AppComponent } from './app.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleService } from './article.service';
-
+import { LoaderComponent } from './loader/loader.component';
+import { ArticleListHeaderComponent } from './article-list-header/article-list-header.component';
 
 
 @NgModule({
@@ -15,12 +18,16 @@ import { ArticleService } from './article.service';
     AppComponent,
     SidebarComponent,
     ArticleComponent,
-    ArticleListComponent
+    ArticleListComponent,
+    LoaderComponent,
+    ArticleListHeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule,
+    RouterModule
   ],
   providers: [ArticleService],
   bootstrap: [AppComponent]

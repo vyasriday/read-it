@@ -1,0 +1,9 @@
+.loading-message {
+
+  height:100px;
+  width: 300px;
+  margin: 0 auto;
+  font-size: 32px;
+  padding: 5px;
+  box-shadow: 1 4 8 gray;
+}

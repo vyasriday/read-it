@@ -1,5 +1,6 @@
  import { Component, OnInit, Input } from '@angular/core';
 import { ArticleService } from './../article.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-article-list',
@@ -9,14 +10,17 @@ import { ArticleService } from './../article.service';
 export class ArticleListComponent implements OnInit {
 
   articles: any[];
+  loading = true;
+  sourceKey: string;
 
   constructor(
+    private route: ActivatedRoute,
     private articleService: ArticleService
   ) {}
 
   ngOnInit() {
-
-    this.articleService.getArticles().then(res => {
+    this.route.params.subscribe(res => this.sourceKey = res['sourceKey']);
+    this.articleService.getArticles(this.sourceKey).then(res => {
       this.articles = res.map(article => {
         return {
           title : article.title,
@@ -27,7 +31,7 @@ export class ArticleListComponent implements OnInit {
           urlToImage: article.urlToImage
         };
       });
-      console.log(res);
+      this.loading = false;
     });
   }
 
