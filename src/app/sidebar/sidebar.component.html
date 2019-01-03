@@ -9,7 +9,6 @@
           *ngFor="let source of (sources | async)"
           routerLink="/news/{{ source['id'] }}"
           routerLinkActive="active"
-          (click)="refresh()"
         >
           <span class="side-news-item">
             <span class="side-news-item"> {{ source["name"] }} </span>

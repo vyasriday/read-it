@@ -11,7 +11,7 @@ export class ArticleListComponent implements OnInit {
 
   articles: any[];
   loading = true;
-  sourceKey: string;
+  oldSourceKey: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,19 +19,24 @@ export class ArticleListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.params.subscribe(res => this.sourceKey = res['sourceKey']);
-    this.articleService.getArticles(this.sourceKey).then(res => {
-      this.articles = res.map(article => {
-        return {
-          title : article.title,
-          description: article.description,
-          votes: article.votes || 0,
-          content: article.content,
-          publishedAt: article.publishedAt,
-          urlToImage: article.urlToImage
-        };
+    this.route.params.subscribe(params => {
+      if (this.oldSourceKey === params['sourceKey']) {
+        return;
+      }
+      this.loading = true;
+      this.articleService.getArticles(params['sourceKey']).then(res => {
+        this.articles = res.map(article => {
+          return {
+            title : article.title,
+            description: article.description,
+            votes: article.votes || 0,
+            content: article.content,
+            publishedAt: article.publishedAt,
+            urlToImage: article.urlToImage
+          };
+        });
+        this.loading = false;
       });
-      this.loading = false;
     });
   }
 
