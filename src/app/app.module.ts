@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleService } from './article.service';
 import { LoaderComponent } from './loader/loader.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { LoaderComponent } from './loader/loader.component';
     ArticleComponent,
     ArticleListComponent,
     LoaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
