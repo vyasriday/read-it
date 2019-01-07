@@ -5,9 +5,9 @@ import {Routes, RouterModule} from '@angular/router';
 
 
 const routes: Routes = [
-  {path: '', component: AppComponent, pathMatch: 'full'},
-  {path: 'news/:sourceKey', component: ArticleListComponent}
-
+  {path: '', redirectTo: 'news/reddit-r-all', pathMatch: 'full'},
+  {path: 'news/:sourceKey', component: ArticleListComponent},
+  {path: '**', redirectTo: 'news/reddit-r-all'}
 ];
 
 @NgModule({
