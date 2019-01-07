@@ -11,6 +11,7 @@ import { ArticleListComponent } from './article-list/article-list.component';
 import { ArticleService } from './article.service';
 import { LoaderComponent } from './loader/loader.component';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FooterComponent } from './footer/footer.component';
     ArticleListComponent,
     LoaderComponent,
     FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

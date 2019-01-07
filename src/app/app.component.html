@@ -1,7 +1,8 @@
 <div class="ui bottom attached segment">
-  <app-sidebar></app-sidebar>
-  <div class="pusher">
+  <app-sidebar *ngIf="toggle"></app-sidebar>
+  <div class="content">
+    <app-header (toggleEvent)="toggleSidebar($event)"></app-header>
     <router-outlet></router-outlet>
+    <app-footer></app-footer>
   </div>
-  <app-footer></app-footer>
 </div>

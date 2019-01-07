@@ -1,0 +1,24 @@
+.toggle-btn:hover {
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 40px;
+  padding: 8px 12px;
+  box-shadow: 0 3px 10px whitesmoke;
+  transition: transform 0.5s;
+}
+
+.article-heading {
+  margin-left: 20px;
+  font-weight: 700;
+  font-size: 32px;
+}
+
+.visible {
+  transform: translate(185px);
+  transition: transform 0.5s;
+}
+

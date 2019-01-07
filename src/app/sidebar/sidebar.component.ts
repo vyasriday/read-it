@@ -1,5 +1,5 @@
 import { ArticleService } from './../article.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-
   sources: any;
+  @Input() toggleSidebar: boolean;
   constructor(
     private articleService: ArticleService
   ) { }
@@ -16,5 +16,6 @@ export class SidebarComponent implements OnInit {
   ngOnInit() {
     this.sources = this.articleService.getSources();
   }
+
 
 }

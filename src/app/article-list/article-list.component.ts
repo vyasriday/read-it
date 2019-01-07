@@ -1,4 +1,4 @@
- import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ArticleService } from './../article.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -39,5 +39,4 @@ export class ArticleListComponent implements OnInit {
       });
     });
   }
-
 }
